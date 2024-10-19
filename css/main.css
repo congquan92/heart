@@ -58,7 +58,7 @@
   }
   
   #drag-container p {
-    
+    font-size: 25px;
     position: absolute;
     top: 100%;
     left: 50%;

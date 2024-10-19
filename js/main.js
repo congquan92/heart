@@ -13,7 +13,7 @@ var bgMusicControls = true; // Show UI music control
 
 // ===================== start =======================
 // animation start after 1000 miliseconds
-setTimeout(init, 1000);
+setTimeout(init, 100);
 
 var odrag = document.getElementById('drag-container');
 var ospin = document.getElementById('spin-container');
@@ -70,6 +70,17 @@ if (bgMusicURL) {
 </audio>
 `;
 }
+// Thêm sự kiện nhấp chuột để phát nhạc
+document.addEventListener('click', function() {
+  if (bgMusicURL) {
+      document.getElementById('music-container').innerHTML += `
+      <audio id="background-music" src="${bgMusicURL}" controls autoplay loop>
+          <p>If you are reading this, it is because your browser does not support the audio element.</p>
+      </audio>
+      `;
+  }
+});
+
 
 // setup events
 document.onpointerdown = function (e) {
